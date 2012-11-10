@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+template<typename T>
+class tcontainer {
+    public:
+	virtual void push(const T&) = 0;
+	virtual T pop() = 0;
+	virtual const T& begin() = 0;
+	virtual const T& end() = 0;
+	virtual size_t size() = 0;
+};
+
+template<typename T>
+class tvector : tcontainer<T>
+{
+    public:
+	static const size_t step = 100;
+	tvector() : itssize(0), cap(step), buf(NULL) {
+	    re_capacity(cap);
+	}
+	~tvector() { free(buf); }
+
+	void re_capacity(size_t s)
+	{
+	    if ( buf == NULL ) 
+		buf = (T*)malloc(sizeof(T)*s);
+	    else
+		buf = realloc(buf, sizeof(T)*s);
+	}
+
+	virtual void push(const T& v)
+	{
+		if ( itssize >= cap ) {
+		    re_capacity(s+step);
+		}
+		buf[itssize++] = v;
+	}
+
+	virtual T pop()
+	{
+		if (itssize > 0) {
+			return buf[--itssize];
+		}
+	}
+
+	virtual const T& begin()
+	{
+	    return buf[0];
+	}
+
+	virtual const T& end()
+	{
+		return buf[itssize-1];
+	}
+
+	virtual size_t size()
+	{
+		return itssize;
+	}
+
+	const T& operator[](size_t i)
+	{
+	    if ( i>0 && i < itssize ) 
+		return buf[i];
+	}
+	
+    private:
+	size_t itssize;
+	size_t cap;
+	char * buf;
+}

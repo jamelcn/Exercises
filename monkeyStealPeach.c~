@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+/*
+ *功  能：根据初始桃子数计算能够完成分配任务的猴子数
+ *参  数：num-初始桃子数 monkeyNum-能够完成分配任务的猴子数
+ *返回值：能够完成分配任务的猴子数
+ */
+
+int Peach(int num, int monkeyNum)
+{
+    if ((num-1) % 5 != 0) {
+	return monkeyNum;
+    }
+    num = (num - 1) / 5 * 4;
+    return Peach(num, monkeyNum+1);
+}
+
+int main(int argc, const char *argv[])
+{
+    int peachNum = 1;
+    /*如果有5个猴子能完成分配任务，则满足题目要求*/
+    while (Peach(peachNum, 0) != 5)
+    	peachNum++;
+    printf("Peach Num = %d\n", peachNum);
+    return 0;
+}

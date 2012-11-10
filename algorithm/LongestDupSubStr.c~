@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int count = 0;
+char sub_str[256];
+
+void find_str(char* str)
+{
+	int str_len = strlen(str);
+	int i, j, k;
+	int tmp_cnt = 0;
+
+	for (i = 0; i < str_len; i++) {
+		for (j = i + 1; j < str_len; j++) {
+			tmp_cnt = 1;
+			int n = j - i;
+			if (strncmp(&str[i], &str[j], n) == 0) {
+				++tmp_cnt;
+				for (k = j+n; k < str_len; k += n) {
+					if (strncmp(&str[i], &str[k], n) == 0) {
+						++tmp_cnt;
+					}
+					else
+						break;
+				}
+				if (count < tmp_cnt) {
+					count = tmp_cnt;
+					memcpy(sub_str, &str[i], n);    /* record the sub string */
+				}
+			}
+		}
+	}
+}
+
+int main(int argc, const char *argv[])
+{
+	char str[100] = "abcbcbcabc";
+	/*fgets(str, sizeof(str), stdin);*/
+	find_str(str);
+	printf("%d, %s\n", count, sub_str);
+	return 0;
+}

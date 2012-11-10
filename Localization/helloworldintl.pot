@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-27 16:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: helloworldintl.c:16
+#, c-format
+msgid "Hello World"
+msgstr ""
+
+#: helloworldintl.c:25
+#, c-format
+msgid "I love translation\n"
+msgstr ""
+
+#: helloworldintl.c:22
+#, c-format
+msgid "The magic number is %d\n"
+msgstr ""
+
+#: helloworldintl.c:23
+#, c-format
+msgid "These are additional words"
+msgstr ""
+
+#: helloworldintl.c:18
+#, c-format
+msgid "These text demonstrate that translation using po files is easier\n"
+msgstr ""
+
+#: helloworldintl.c:20
+#, c-format
+msgid "This number %d is of singular form"
+msgid_plural "This number %d is of plural form"
+msgstr[0] ""
+msgstr[1] ""
+
+#: helloworldintl.c:14
+#, c-format
+msgid "again"
+msgstr ""

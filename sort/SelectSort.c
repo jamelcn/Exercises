@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "Sort.h"
+
+int main(int argc, const char *argv[])
+{
+	int i, j, min;
+	for (i = 0; i < LEN-1; i++) {
+	    min = i;
+	    for (j = i+1; j < LEN; j++) {
+		if ( a[min] > a[j] ) {
+		    min=j;
+		}
+	    }
+	    if (min != i) {
+		swap(&a[min], &a[i]);
+	    }
+	}
+
+	print(a, LEN);
+	return 0;
+}

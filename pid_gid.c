@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
+
+int main(int argc, const char *argv[])
+{
+    struct passwd *pw;
+    printf("IN FILE \"%s\":\n", __FILE__);
+    printf("pid:%d, ppid: %d\n", getpid(), getppid());
+    printf("uid:%d, euid: %d\n", getuid(), geteuid());
+    pw = getpwuid(getuid());
+    printf("Username: %s, Password: %s\n", pw->pw_name, pw->pw_passwd);
+    printf("gid:%d, egid: %d\n", getgid(), getegid());
+    return 0;
+}

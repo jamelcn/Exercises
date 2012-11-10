@@ -1,0 +1,26 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  main.c
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  2012/09/25 07时28分38秒
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  YOUR NAME (), 
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+#include <stdlib.h>
+#include <stdio.h>
+#include "defs.h"
+
+int main(int argc, const char *argv[])
+{
+    printf("Hello Make!\n");
+	return 0;
+}

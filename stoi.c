@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int stoi(char *str)
+{
+    int k, num;
+    num = 0;
+    while( *str != '\0' ) {
+	k = (int)( *str - '0' );
+	num *= 10;
+	num += k;
+	str++;
+    }
+    return num;
+}
+
+int main(int argc, const char *argv[])
+{
+	char string[100];
+	char *str = string;
+	int num;
+	gets(string);
+	if (*string=='-') {
+	    num = -stoi(++str);
+	} else {
+	    num = stoi(str);
+	}
+	printf("%d\n", num);
+	return 0;
+}

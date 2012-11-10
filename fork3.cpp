@@ -1,0 +1,13 @@
+#include <unistd.h>
+#include <sys/types.h>
+#include <stdio.h>
+
+int main(int argc, const char *argv[])
+{
+    pid_t pid1 = fork();
+    pid_t pid2 = fork();
+
+    printf("pid1: %d, pid2: %d\n", pid1, pid2);
+    sleep(300);
+	return 0;
+}

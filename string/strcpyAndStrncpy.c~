@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+char * strcpy(char *dst,const char *src)
+{
+	if (dst == src) 
+		return dst;
+	assert( (dst != NULL) && (src != NULL) );
+	char *address = dst;
+	while ( (*dst++ = *src++) ) 
+		;
+	return address;
+
+}

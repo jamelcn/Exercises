@@ -1,0 +1,1 @@
+seqArraySum : seqArraySum.c
